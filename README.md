@@ -8,7 +8,7 @@ listing to the local database.
 
 ## Technologies used
 
-: [KMM](https://kotlinlang.org/lp/mobile/)
+: [KMM](https://kotlinlang.org/lp/mobile/)\n
 : [DB-SQL Delight](https://github.com/cashapp/sqldelight)
 : [Networking - Ktor](https://ktor.io/)
 : [UI-Jetpack Compose (Android)](https://developer.android.com/jetpack/compose)

@@ -18,6 +18,6 @@ information.
 
 ## TODO
 
-    -[] (SWiftUI Views)
-    -[] (Tests)
+    - [] (SWiftUI Views)
+    - [] (Tests)
  

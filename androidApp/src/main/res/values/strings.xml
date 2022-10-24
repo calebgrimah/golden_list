@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Golden List</string>
+    <string name="listings">Listings</string>
+    <string name="favorites">Favorites</string>
+    <string name="golden_list">Golden List</string>
+    <string name="golden_list_db">Golden List Favorites</string>
+</resources>

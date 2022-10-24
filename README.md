@@ -4,7 +4,7 @@ A kotlin multiplatform application that fetches a list of job listings
 from [arbeitnow](https://arbeitnow.com/api/job-board-api). Each listing is displayed via a web-view
 in the detail screen (Jetpack Compose). Any routing action to the detail screen saves that job
 listing to the local database.
-![Screen Recording](screenshot/golden_list.gif)
+[Screen Recording](screenshot/golden_list.gif)
 
 ## Technologies used
 

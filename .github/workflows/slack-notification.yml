@@ -27,7 +27,16 @@ jobs:
           payload: |
             {
               "channel": "kangs",
-              "text": "New pull request: ${{ github.event.pull_request.number }} - ${{ github.event.pull_request.title }} opened by ${{ github.event.pull_request.user.login }}"
+              "text": "New pull request opened by ${{ github.event.pull_request.user.login }}", 
+              "blocks":[
+                 {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ github.event.pull_request.html_url }} \nReviewers:${{ steps.reviewers.outputs.reviewers }}"
+                }
+              }
+              ]
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

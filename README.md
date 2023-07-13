@@ -6,7 +6,7 @@ in the detail screen (Jetpack Compose). Any routing action to the detail screen 
 listing to the local database.
 [Screen Recording](screenshot/golden_list.gif)
 
-## Technologies used
+## Technologies used -
 
 - [KMM](https://kotlinlang.org/lp/mobile/)
 - [DB-SQL Delight](https://github.com/cashapp/sqldelight)

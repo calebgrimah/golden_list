@@ -20,25 +20,10 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Send Slack Notification
-        uses: slackapi/slack-github-action@v1.24.0
-        with:
-          webhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}
-          payload: |
-            {
-              "channel": "kangs",
-              "text": "New pull request opened by ${{ github.event.pull_request.user.login }}:<${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}|Click here>", 
-              "blocks":[
-                 {
-                "type": "section",
-                "block_id": "section567",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "Link to pull request:${{ github.event.pull_request.html_url }} \nReviewers:${{ steps.reviewers.outputs.reviewers }}"
-                }
-              }
-              ]
-            }
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_CHANNEL: kangs
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_USERNAME: get-care

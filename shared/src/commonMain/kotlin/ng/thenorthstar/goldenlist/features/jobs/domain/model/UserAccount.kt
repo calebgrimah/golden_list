@@ -16,3 +16,7 @@ data class JobListing(
     val tags : String,
     val url : String,
 )
+
+data class JobListingTest(
+    val url : String,
+)

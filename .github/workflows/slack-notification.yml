@@ -23,9 +23,9 @@ jobs:
       - name: Send Slack Notification
         uses: slackapi/slack-github-action@v1.24.0
         with:
-          status: ${{ job.status }}
-          footer: ${{ github.event.pull_request.html_url }}
-          text: |
-            PR Number: ${{ github.event.pull_request.number }}
-            PR Title: ${{ github.event.pull_request.title }}
-            PR User: ${{ github.event.pull_request.user.login }}
+          webhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}
+          payload: |
+            {
+              "channel": "kangs",
+              "text": "New pull request: ${{ github.event.pull_request.number }} - ${{ github.event.pull_request.title }} opened by ${{ github.event.pull_request.user.login }}"
+            }

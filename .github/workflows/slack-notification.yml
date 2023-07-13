@@ -28,18 +28,18 @@ jobs:
           PR_TITLE=${{ github.event.pull_request.title }}
           PR_USER=${{ github.event.pull_request.user.login }}
           PR_ACTION=${{ github.event_name }}
-
-          if [[ "$PR_ACTION" == "opened" ]]; then
+          
+          if [ "$PR_ACTION" == "opened" ]; then
             MESSAGE="New pull request: $PR_NUMBER - $PR_TITLE opened by $PR_USER"
-          elif [[ "$PR_ACTION" == "synchronize" ]]; then
+          elif [ "$PR_ACTION" == "synchronize" ]; then
             MESSAGE="Pull request: $PR_NUMBER - $PR_TITLE updated by $PR_USER"
-          elif [[ "$PR_ACTION" == "closed" ]]; then
+          elif [ "$PR_ACTION" == "closed" ]; then
             MESSAGE="Pull request: $PR_NUMBER - $PR_TITLE closed by $PR_USER"
           else
             echo "Unsupported action: $PR_ACTION"
             exit 1
           fi
-
+          
           PAYLOAD="{\"text\": \"$MESSAGE\", \"channel\": \"kangs\"}"
           
           curl -X POST -H 'Content-type: application/json' --data "$PAYLOAD" $SLACK_WEBHOOK_URL

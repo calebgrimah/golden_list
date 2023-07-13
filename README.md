@@ -17,6 +17,6 @@ information.
 
 ## TODO
 
-    - [] (SWiftUI Views)
+    - [] (SwiftUI Views)
     - [] (Tests)
  
